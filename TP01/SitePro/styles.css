@@ -1,0 +1,23 @@
+.menu{
+    background-color: #E24;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: space-evenly;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.inline-container{
+  display: inline-flex;
+  padding: 10px;
+}
+
+.bleu{background-color: #28B;}
+.vert{background-color: #2B8;}
+.jaune{background-color: #BB2;}
+.rouge{background-color: #E24;}
