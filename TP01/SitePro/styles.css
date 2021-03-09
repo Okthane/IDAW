@@ -5,10 +5,17 @@
     flex-wrap: wrap; 
     justify-content: space-evenly;
 }
-
-.container{
+.element-flexible{
+  flex: 1 1 50px;
+  background-color: #0DA; /*Vert*/
+  width: 40%;
+  border: 2px solid green;
+  box-sizing: border-box;
+  margin: 10px;
+}
+.body{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 10px;
   margin-bottom: 10px;
 }
