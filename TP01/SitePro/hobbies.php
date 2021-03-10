@@ -1,5 +1,9 @@
-
-
+<?php
+require_once('template_header.php');
+?>
+...
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,9 +19,9 @@
 </header>
 <body class="body">
     <nav class="menu">
-        <nav class="item_menu"><a href="index.html">Accueil</a></nav>
-        <nav class="item_menu"><a href="CV.html">CV</a></nav>
-        <nav class="currentpage"><a href="hobbies.html">Hobbies</a></nav>
+        <nav class="item_menu"><a href="index.php">Accueil</a></nav>
+        <nav class="item_menu"><a href="CV.php">CV</a></nav>
+        <nav class="currentpage"><a href="hobbies.php">Hobbies</a></nav>
     </nav>
     <article>
         <h2> Lectures, films & Sports</h2>
