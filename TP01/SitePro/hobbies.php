@@ -1,7 +1,6 @@
 <?php
 require_once('template_header.php');
 ?>
-...
 </body>
 </html>
 <!DOCTYPE html>

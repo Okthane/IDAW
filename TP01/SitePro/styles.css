@@ -40,7 +40,7 @@
 
 .currentpage{
   flex: 1 1 50px;
-  background-color: rgb(14, 156, 199); /*Vert*/
+  background-color: rgb(14, 156, 199); 
   width: 40%;
   border: 2px solid rgb(76, 26, 194);
   border-radius: 8px;

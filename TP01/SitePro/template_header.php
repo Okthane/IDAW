@@ -1,8 +1,7 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-<title>Hector Durand</title>
-<link rel="stylesheet" href="style1.css" type="text/css"
-media="screen" title="default" charset="utf-8" />
-</head>
-<body>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet" type="text/css"/>
