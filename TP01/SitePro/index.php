@@ -34,8 +34,8 @@ require_once('template_header.php');
         <nav class="item_menu"><a href="CV.php">CV</a></nav>
         <nav class="item_menu"><a href="hobbies.php">Hobbies</a></nav>
     </nav>
-    <footer>
-        <p>Pour votre santé, évitez de manger trop gras, trop salé, trop sucré...</p>
-    </footer>
+    <?php
+         require_once("template_footer.php");
+    ?>
 </body>
 </html>

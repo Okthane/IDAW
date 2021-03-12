@@ -46,9 +46,9 @@ require_once('template_header.php');
             </ul>
         </section>
     </article>
-    <footer>
-        <p>Pour votre santé, évitez de manger trop gras, trop salé, trop sucré...</p>
-    </footer>
+        <?php
+            require_once("template_footer.php");
+        ?>
 </body>
 </html>
 
