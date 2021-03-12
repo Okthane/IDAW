@@ -20,11 +20,9 @@ require_once('template_header.php');
         </p>
         
     </header>
-    <nav class="menu">
-        <nav class="currentpage"><a href="index.php">Accueil</a></nav>
-        <nav class="item_menu"><a href="CV.php">CV</a></nav>
-        <nav class="item_menu"><a href="hobbies.php">Hobbies</a></nav>
-    </nav>
+    <?php
+    require_once("template_menu.php");
+    ?>
     <?php
          require_once("template_footer.php");
     ?>

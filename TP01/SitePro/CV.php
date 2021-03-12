@@ -11,11 +11,9 @@ require_once('template_header.php');
             Trouvez ici le CV d'un jeune étudiant polyvalent, motivé, et dynamique<br>
         </p>
     </header>
-    <nav class="menu">
-        <nav class = "item_menu"><a href="index.php">Accueil</a></nav>
-        <nav class="currentpage"><a href="CV.php">CV</a></nav>
-        <nav class="item_menu"><a href="hobbies.php">Hobbies</a></nav>
-    </nav>
+    <?php
+        require_once("template_menu.php");
+    ?>
     <div class="infos">
         <ul>
             <p>pierre.marque@etu.imt-lille-douai.fr</p>

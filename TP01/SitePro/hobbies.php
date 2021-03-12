@@ -1,15 +1,7 @@
 <?php
 require_once('template_header.php');
 ?>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles.css" rel="stylesheet" type="text/css"/>
+
     <title>Pierre Marque - Hobbies</title>
 </head>
 <header>
@@ -17,11 +9,9 @@ require_once('template_header.php');
     <p> Voci quelques choses qui me définissent en dehors <br> de ma vie professionelle.</p>
 </header>
 <body class="body">
-    <nav class="menu">
-        <nav class="item_menu"><a href="index.php">Accueil</a></nav>
-        <nav class="item_menu"><a href="CV.php">CV</a></nav>
-        <nav class="currentpage"><a href="hobbies.php">Hobbies</a></nav>
-    </nav>
+    <?php
+        require_once("template_menu.php");
+    ?>
     <article>
         <h2> Lectures, films & Sports</h2>
         <section>
