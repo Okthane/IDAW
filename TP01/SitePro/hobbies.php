@@ -11,6 +11,7 @@ require_once('template_header.php');
 <body class="body">
     <?php
         require_once("template_menu.php");
+        renderMenuToHTML('hobbies');
     ?>
     <article>
         <h2> Lectures, films & Sports</h2>

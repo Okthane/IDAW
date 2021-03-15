@@ -1,23 +1,26 @@
-<nav class="menu">
-        <nav class="item_menu"><a href="index.php">Accueil</a></nav>
-        <nav class="item_menu"><a href="CV.php">CV</a></nav>
-        <nav class="item_menu"><a href="hobbies.php">Hobbies</a></nav>
-        <nav class="item_menu"><a href="projets.php">Mes projets</a></nav>
-    </nav>
-
 <?php
-    function renderMenuToHTML($currentPageId) {
+    function renderMenuToHTML($currentPageId) 
+    {
 // un tableau qui d\'efinit la structure du site
         $mymenu = array(
 // idPage titre
-            'index' => array( 'Accueil' ),
-            'cv' => array( 'Cv' ),
+            'index' => array('Accueil'),
+            'CV' => array('CV'),
+            'hobbies' => array('Hobbies'),
             'projets' => array('Mes Projets')
         );
-// ...
-        foreach($mymenu as $pageId => $pageParameters) {
-            echo "...";
+        echo "<nav class ='menu'>";
+        foreach($mymenu as $pageId => $pageParameters) 
+        {
+            if($pageId  != $currentPageId)
+            {
+                echo "<nav class='item_menu'><a href='$pageId.php'> $pageParameters[0]</a></nav>";
+            }
+            else 
+            {
+                echo "<nav class='currentpage'><a href='$pageId.php'> $pageParameters[0]</a></nav>";
+            }
         }
-// ...
+        echo "</nav>";
     }
 ?>
