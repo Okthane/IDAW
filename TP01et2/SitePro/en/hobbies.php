@@ -1,32 +1,22 @@
-<?php
-require_once('template_header.php');
-?>
 
-    <title>Pierre Marque - Hobbies</title>
-</head>
 <header>
     <h1>HOBBIES</h1>
-    <p> Voci quelques choses qui me définissent en dehors <br> de ma vie professionelle.</p>
+    <p>Here are some items that defines me  <br> when I'm not at work.</p>
 </header>
-<body class = "body">
-    <?php
-        require_once("template_menu.php");
-        renderMenuToHTML('hobbies');
-    ?>
     <article>
-        <h2> Lectures, films & Sports</h2>
+        <h2> Readings, movies & Sports</h2>
         <section>
-            <h3>Sports pratiqués</h3>
+            <h3>Sports </h3>
             <ul>
                 <li>Football</li>
                 <li>Tennis</li>
-                <li>Volleyball (très peu)</li>
+                <li>Volleyball (not that much)</li>
             </ul>
         </section>
         <section>
-            <h3> Livres et films préférées </h3>
+            <h3> My selection of books and movies  </h3>
             <ul>
-                <li> <cite>Les Robots</cite> - Isaac Asimov</li>
+                <li> <cite>I, Robots</cite> - Isaac Asimov</li>
                 <li> <cite>Cyrano de Bergerac</cite> - Edmond Rostand</li>
                 <li> <cite>Tinker, Tailor, Soldier, Spy - </cite>John le Carré</li>
                 <br>
@@ -36,9 +26,5 @@ require_once('template_header.php');
             </ul>
         </section>
     </article>
-        <?php
-            require_once("template_footer.php");
-        ?>
-</body>
-</html>
+
 

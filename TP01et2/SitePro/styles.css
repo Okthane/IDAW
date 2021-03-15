@@ -19,6 +19,19 @@
   
 }
 
+.item_menu_lang{
+  flex: 1 1 20px;
+  background-color: rgb(109, 213, 245); /*Vert*/
+  width: 20%;
+  border: 2px solid rgb(76, 26, 194);
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin: 5px;
+  cursor: pointer;
+  text-align: center;
+  
+}
+
 .infos{
   flex: 10 1 100px;
   background-color: rgb(109, 213, 245); /*Vert*/

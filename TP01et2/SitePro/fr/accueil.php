@@ -1,10 +1,4 @@
-<?php
-require_once('template_header.php');
-?>
 
-    <title> Pierre Marque, élève-ingénieur</title>
-</head>
-<body class="body">
     <?php
         //echo date('Y-m-d H:i:s');  // 2012-10-11 15:35:53
         echo date('l j F Y, H:i');// Thursday 11 October 2012, 15:35
@@ -21,11 +15,9 @@ require_once('template_header.php');
         
     </header>
     <?php
-        require_once("template_menu.php");
-        renderMenuToHTML('index');
+       // require_once("template_menu.php");
+        //renderMenuToHTML('index');
     ?>
-    <?php
-         require_once("template_footer.php");
-    ?>
+
 </body>
-</html>
+
