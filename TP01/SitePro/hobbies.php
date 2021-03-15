@@ -8,7 +8,7 @@ require_once('template_header.php');
     <h1>HOBBIES</h1>
     <p> Voci quelques choses qui me définissent en dehors <br> de ma vie professionelle.</p>
 </header>
-<body class="body">
+<body class = "body">
     <?php
         require_once("template_menu.php");
         renderMenuToHTML('hobbies');

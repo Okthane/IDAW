@@ -4,7 +4,7 @@
 // un tableau qui d\'efinit la structure du site
         $mymenu = array(
 // idPage titre
-            'index' => array('Accueil'),
+            'accueil' => array('Accueil'),
             'CV' => array('CV'),
             'hobbies' => array('Hobbies'),
             'projets' => array('Mes Projets')
@@ -14,11 +14,11 @@
         {
             if($pageId  != $currentPageId)
             {
-                echo "<nav class='item_menu'><a href='$pageId.php'> $pageParameters[0]</a></nav>";
+                echo "<nav class='item_menu'><a href='http://localhost/IDAW/TP01/SitePro/index.php?page=$pageId'> $pageParameters[0]</a></nav>";
             }
             else 
             {
-                echo "<nav class='currentpage'><a href='$pageId.php'> $pageParameters[0]</a></nav>";
+                echo "<nav class='currentpage'><a href='http://localhost/IDAW/TP01/SitePro/index.php?page=$pageId'> $pageParameters[0]</a></nav>";
             }
         }
         echo "</nav>";
