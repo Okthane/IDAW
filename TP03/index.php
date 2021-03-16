@@ -1,4 +1,15 @@
 <?php
+    $style="style1";
+    if(isset($_COOKIE['style']))
+    {
+        $style = $_COOKIE['style'];
+    }
+    if(isset($_GET['css']))
+    {
+        $style = $_GET["css"]; // Contenu du cookie
+        setcookie("style", $style, time()+3600);
+    }
+
     require_once("template_header.php");
     require_once("template_menu.php");
     $currentPageId = 'accueil';
@@ -11,7 +22,7 @@
     {
         $currentLanguage = $_GET['lang'];
     }
-
+    renderHeader($style);
     renderMenuToHTML($currentPageId,$currentLanguage);
 ?>  
 <section>
@@ -33,18 +44,9 @@
     </select>
     <input type="submit" value="Appliquer" />
 </form>
-<?php
-    $content = $_GET['css']; // Contenu du cookie
-    setcookie("style", $content, time()+3600);
-?>
 </section>
 <?php
     require_once("template_footer.php");
 ?>
-
-
-
-
-
 
 
