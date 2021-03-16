@@ -1,4 +1,6 @@
 <?php
+    $currentPageId = 'accueil';
+    $currentLanguage = 'fr';
     $style="style1";
     if(isset($_COOKIE['style']))
     {
@@ -12,8 +14,6 @@
 
     require_once("template_header.php");
     require_once("template_menu.php");
-    $currentPageId = 'accueil';
-    $currentLanguage = 'fr';
     if(isset($_GET['page'])) 
     {
         $currentPageId = $_GET['page'];
@@ -23,7 +23,7 @@
         $currentLanguage = $_GET['lang'];
     }
     renderHeader($style);
-    renderMenuToHTML($currentPageId,$currentLanguage);
+    renderMenuToHTML($currentPageId,$currentLanguage,$style);
 ?>  
 <section>
     <?php
