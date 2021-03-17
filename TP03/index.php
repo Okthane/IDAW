@@ -1,21 +1,23 @@
 <?php
     session_start();
     require_once("connected.php");
-    $currentPageId = 'accueil';
-    $currentLanguage = 'fr';
-    $style="style1";
 
     if(isset($_SESSION['login']))
     {
+
         $userlogin = $_SESSION['login'];
-        echo "<nav>";
+        echo "<nav = menu f>";
             echo "<nav class='item_menu_deco'> $userlogin </nav>";
+            echo "<nav class='item_menu_deco'> <form id='login_form' action='session_over.php' method='POST'><th></th><td><input type='submit' value='disconect' /></td></tr> </nav>";
         echo "</nav>";
+        $currentPageId = 'accueil';
     }
     else 
     {
         $currentPageId = 'login';
     }
+    $currentLanguage = 'fr';
+    $style="style1";
     if(isset($_COOKIE['style']))
     {
         $style = $_COOKIE['style'];
