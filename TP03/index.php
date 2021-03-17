@@ -1,5 +1,6 @@
 <?php
-
+    session_start();
+    require_once("connected.php");
     $currentPageId = 'accueil';
     $currentLanguage = 'fr';
     $style="style1";
