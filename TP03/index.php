@@ -1,7 +1,20 @@
 <?php
+
     $currentPageId = 'accueil';
     $currentLanguage = 'fr';
     $style="style1";
+
+    if(isset($_SESSION['login']))
+    {
+        $userlogin = $_SESSION['login'];
+        echo "<nav>";
+            echo "<nav class='item_menu_deco'> $userlogin </nav>";
+        echo "</nav>";
+    }
+    else 
+    {
+        $currentPageId = 'login';
+    }
     if(isset($_COOKIE['style']))
     {
         $style = $_COOKIE['style'];
@@ -23,7 +36,9 @@
         $currentLanguage = $_GET['lang'];
     }
     renderHeader($style);
+    
     renderMenuToHTML($currentPageId,$currentLanguage,$style);
+    
 ?>  
 <section>
     <?php
@@ -48,5 +63,4 @@
 <?php
     require_once("template_footer.php");
 ?>
-
 

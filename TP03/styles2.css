@@ -16,6 +16,34 @@
   margin: 5px;
   cursor: pointer;
   text-align: center;
+  flex-direction: row;
+  
+}
+
+.currentpage{
+  flex: 1 1 50px;
+  background-color: rgb(199, 97, 14); 
+  width: 40%;
+  border: 2px solid rgb(194, 26, 76);
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin: 5px;
+  cursor: pointer;
+  text-align: center;
+  flex-direction: row;
+}
+
+.item_menu_deco{
+  flex: 1 1 30px;
+  background-color: rgb(245, 109, 109); /*Vert*/
+  width: 10%;
+  border: 2px solid rgb(194, 60, 26);
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin: 5px;
+  cursor: pointer;
+  text-align: center;
+  flex-direction: row;
   
 }
 
@@ -51,17 +79,6 @@
   margin-bottom: 10px;
 }
 
-.currentpage{
-  flex: 1 1 50px;
-  background-color: rgb(199, 97, 14); 
-  width: 40%;
-  border: 2px solid rgb(194, 26, 76);
-  border-radius: 8px;
-  box-sizing: border-box;
-  margin: 5px;
-  cursor: pointer;
-  text-align: center;
-}
 .container{
   display: flex;
   flex-direction: row;

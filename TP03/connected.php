@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
 <?php
 // on simule une base de données
     $users = array(
@@ -16,23 +7,40 @@
     $login = "anonymous";
         $errorText = "";
     $successfullyLogged = false;
-    if(isset($_POST['login']) && isset($_POST['password'])) {
-        $tryLogin=$_POST['login'];
+    if(isset($_POST['login']) && isset($_POST['password'])) 
+    {
+        $tryLogin = $_POST['login'];
         $tryPwd=$_POST['password'];
-
-// si login existe et password correspond
-    if( array_key_exists($tryLogin,$users) && $users[$tryLogin]==$tryPwd ) {
-        $successfullyLogged = true;
-        $login = $tryLogin;
-    } else
-        $errorText = "Erreur de login/password";
-    } else
+        // si login existe et password correspond
+        if( array_key_exists($tryLogin,$users) && $users[$tryLogin]==$tryPwd ) 
+        {
+            $successfullyLogged = true;
+            $login = $tryLogin;
+            session_start();
+            $_SESSION['login'] = $login;
+            
+            require_once("index.php");
+        } 
+        else
+        {
+            $errorText = "Erreur de login/password";
+            require_once("index.php");
+        }
+    } 
+    else
+    {
         $errorText = "Merci d'utiliser le formulaire de login";
-    if(!$successfullyLogged) {
+        require_once("index.php");
+    }
+    if(!$successfullyLogged) 
+    {
         echo $errorText;
-    } else {
+    } 
+    else 
+    {
         echo "<h1>Bienvenu ".$login."</h1>";
     }
 ?>
+
 </body>
 </html>
