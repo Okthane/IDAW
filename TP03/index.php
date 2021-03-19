@@ -1,7 +1,7 @@
 <?php
     session_start();
     require_once("connected.php");
-
+    require_once("template_header.php");
     if(isset($_SESSION['login']))
     {
 
@@ -28,7 +28,6 @@
         setcookie("style", $style, time()+3600);
     }
 
-    require_once("template_header.php");
     require_once("template_menu.php");
     if(isset($_GET['page'])) 
     {

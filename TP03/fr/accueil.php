@@ -19,5 +19,5 @@
         //renderMenuToHTML('index');
     ?>
 
-</body>
+
 
