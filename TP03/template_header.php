@@ -2,7 +2,6 @@
     function renderHeader($style)
     {
         echo "<!DOCTYPE html>";
-
         echo"<head>";
         echo'<meta charset="UTF-8">';
         echo'<meta http-equiv="X-UA-Compatible" content="IE=edge">';

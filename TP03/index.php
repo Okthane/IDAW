@@ -6,10 +6,10 @@
     {
 
         $userlogin = $_SESSION['login'];
-        echo "<nav = menu f>";
+        /*echo "<nav = menu f>";
             echo "<nav class='item_menu_deco'> $userlogin </nav>";
             echo "<nav class='item_menu_deco'> <form id='login_form' action='session_over.php' method='POST'><th></th><td><input type='submit' value='disconect' /></td></tr> </nav>";
-        echo "</nav>";
+        echo "</nav>";*/
         $currentPageId = 'accueil';
     }
     else 
@@ -38,7 +38,14 @@
         $currentLanguage = $_GET['lang'];
     }
     renderHeader($style);
-    
+    if(isset($_SESSION['login']))
+    {
+
+        echo "<nav = menu f>";
+            echo "<nav class='item_menu_deco'> $userlogin </nav>";
+            echo "<nav class='item_menu_deco'> <form id='login_form' action='session_over.php' ><th></th><td><input type='submit' value='disconect' /></td></tr> </form> </nav>";
+        echo "</nav>";
+    }
     renderMenuToHTML($currentPageId,$currentLanguage,$style);
     
 ?>  

@@ -1,17 +1,11 @@
+<?php
+    $conn = mysqli_connect("localhost", "root", "" , "bdd_test");
+    $sql="SELECT * FROM dieux";
+    $result = $conn->query($sql);
 
-<form id="login_form" action="connected2.php" method="POST">
-    <table>
-        <tr>
-        <th>Login :</th>
-            <td><input type="text" name="login"></td>
-        </tr>
-        <tr>
-        <th>Mot de passe :</th>
-            <td><input type="password" name="password"></td>
-        </tr>
-        <tr>
-        <th></th>
-            <td><input type="submit" value="Se connecter..." /></td>
-        </tr>
-    </table>
-</form>
+    echo"<table>";
+    while($data=mysqli_fetch_array($result)){
+        echo "<tr><td>".$data['id']."</td><td>".$data['login']."</td><td>".$data['pseudo']."</td></tr>";
+    }
+    echo"</table>";
+?>
