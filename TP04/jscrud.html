@@ -1,27 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="SitePro/styles.css" rel="stylesheet" type="text/css"/>
-    <title>Document</title>
+    <title>
+        What have you done to my sooooooooooooong ?!?!?!
+    </title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class = "body">
-    <TABLE BORDER="1" > 
-        <CAPTION> Voici le titre du tableau </CAPTION> 
-            <TR> 
-                <TH> Titre A1 </TH> 
-                <TH> Titre A2 </TH> 
-                <TH> Titre A3 </TH> 
-                <TH> Titre A4 </TH> 
-            </TR> 
-            <TR> 
-                <TH> Titre B1 </TH> 
-                <TD> Valeur B2 </TD> 
-                <TD> Valeur B3 </TD> 
-                <TD> Valeur B4 </TD> 
-            </TR> 
-      </TABLE>
+
+<body>
+
+	<h1><center>Bonjour fillot, identifie toi !</center></h1>
+	<hr>
+			<div class="employee-form">
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div>
+                        <label>Nom complet*</label><label class="validation-error hide" id="fullNameValidationError">Champ obligatoire</label>
+                        <input type="text" name="fullName" id="fullName">
+                    </div>
+                    <div>
+                        <label>Adresse mail</label>
+                        <input type="text" name="email" id="email">
+                    </div>
+                    <div>
+                        <label>Un commentaire ?</label>
+                        <input type="text" name="comment" id="comment">
+                    </div>
+                    <div>
+                        <label>Date de naissance</label>
+                        <input type="date" name="dob" id="dob">
+                    </div>
+                    <div>
+                        <label>Cochez si actuellement en PLS</label>
+                        <input type="checkbox" name = "choix" id = "choix">
+                    </div>
+                    <div  class="form-action-buttons">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+		</div>
+		<br/>
+		<div class = "employees-table">
+                <table class="list" id="employeeList">
+                    <thead>
+                        <tr>
+                            <th>Nom complet</th>
+                            <th>Adresse mail</th>
+                            <th>Un commentaire ?</th>
+                            <th>Date de naissance</th>
+                            <th>PLS</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+        </div>
+    <script src="script.js"></script>
 </body>
 </html>
