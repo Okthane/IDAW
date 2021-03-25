@@ -4,7 +4,7 @@
 <head>
     <title>
         What have you done to my sooooooooooooong ?!?!?!
-    </title>
+    </title>-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,14 +13,14 @@
 	<h1><center>Bonjour fillot, identifie toi !</center></h1>
 	<hr>
 			<div class="employee-form">
-                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                <form id ="stolenForm" onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
                     <div>
                         <label>Nom complet*</label><label class="validation-error hide" id="fullNameValidationError">Champ obligatoire</label>
                         <input type="text" name="fullName" id="fullName">
                     </div>
                     <div>
                         <label>Adresse mail</label>
-                        <input type="email" name="email" id="email">
+                        <input type="text" name="email" id="email">
                     </div>
                     <div>
                         <label>Un commentaire ?</label>
@@ -35,7 +35,7 @@
                         <input type="checkbox" name = "choix" id = "choix">
                     </div>
                     <div  class="form-action-buttons">
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="submit">
                     </div>
                 </form>
 		</div>
@@ -60,3 +60,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+

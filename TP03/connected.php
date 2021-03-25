@@ -8,7 +8,7 @@
     $conn = mysqli_connect($serveurBD,
                   $nomUtilisateur,
                   $motDePasse);
-    $sql = "SELECT * FROM dieux";
+    $sql = 'SELECT * FROM dieux';
     $result=$conn->query($sql);
 // on simule une base de données
    /* $users = array(
