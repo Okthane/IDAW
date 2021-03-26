@@ -96,7 +96,7 @@ $("#stolenForm").submit(function(){
     $.ajax({
         url : 'addUser.php',
         type : 'POST',
-        data : 'fullName='+ fullName +'email='+ email +'comment='+comment + 'dob='+dob + 'choix='+choix,
+        data : 'fullName='+ fullName +'email='+email +'comment='+comment + 'dob='+dob + 'choix='+choix,
         
         dataType : 'html'
     });
