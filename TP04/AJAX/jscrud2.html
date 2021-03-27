@@ -18,10 +18,10 @@
             <thead>
                 <tr>
                     <th scope="col">Nom</th>
-                    <th scope="col">Prenom</th>
+                    <th scope="col">Adresse mail</th>
+                    <th scope="col">Un commentaire ?</th>
                     <th scope="col">Date de naissance</th>
-                    <th scope="col">Aime le cours Web</th>
-                    <th scope="col">Remarques</th>
+                    <th scope="col">PLS</th>
                     <th scope="col">CRUD</th>
                 </tr>
             </thead>
@@ -32,19 +32,19 @@
             <div class="form-group row">
                 <label for="inputNom" class="col-sm-2 col-form-label">Nom*</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputNom" >
+                    <input type="text" class="form-control" id="inputNom" value="pierre">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputAdress" class="col-sm-2 col-form-label">Adresse Mail</label>
                 <div class="col-sm-3">
-                    <input type="email" class="form-control" id="inputAdress" >
+                    <input type="email" class="form-control" id="inputAdress" value="pierre@gmail.com">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputCom" class="col-sm-2 col-form-label">Un commentaire ?</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputCom" >
+                    <input type="text" class="form-control" id="inputCom" value ="non merci" >
                 </div>
             </div>
             <div class="form-group row">
@@ -67,28 +67,70 @@
             </div>
         </form>
         <script>
+        let students = [];
+        let nbOfStudents = 0;
+        let idEdited = -1;
+        function edit(id){
+            idEdited  = id;
+        }
+
+        function student(index, nom, mail, commentaire, date, PLS)
+        {
+            this.index = index;
+            this.nom = nom;
+            this.mail = mail;
+            this.commentaire = commentaire;
+            this.date = date;
+            this.PLS = PLS;
+        }
+
         function onFormSubmit()
         {
-        // prevent the form to be sent to the server
-            //event.preventDefault();
+            let index = nbOfStudents;
             let nom = $("#inputNom").val();
             let mail = $("#inputAdress").val();
             let commentaire = $("#inputCom").val();
             let date = $("#inputDate").val();
-            let PLS = $('#inputChoice').prop(':checked')? "oui":"non";
-            console.log(nom);
-            $("#studentsTableBody").append
-            (
-                `<tr>
-                    <td>${nom}</td>
-                    <td>${mail}</td>
-                    <td>${commentaire}</td>
-                    <td>${date}</td>
-                    <td>${PLS}</td>
-                    <td><button onclick="edit();">Edit</button></td>
-                </tr>`
-            );
+            let PLS = $('#inputChoice').prop("checked") ? "oui" : "non";
+            console.log("numberOfStudents = ", nbOfStudents);
+            console.log("idEdited = "+ idEdited);
+           // myStudent = new student(index, nom, mail, commentaire, date, PLS);
+            if(idEdited!=-1)
+            {
+                students[idEdited].nom = nom;
+                students[idEdited].mail = mail;
+                students[idEdited].commentaire = commentaire;
+                students[idEdited].date = date;
+                students[idEdited].PLS = PLS;
+                console.log(students[idEdited].nom);
+                $("#student-"+students[idEdited].index).empty();
+                    $("#student-"+students[idEdited].index).append(
+                        `<td>${students[idEdited].nom}</td>
+                        <td>${students[idEdited].mail}</td>
+                        <td>${students[idEdited].commentaire}</td>
+                        <td>${students[idEdited].date}</td>
+                        <td>${students[idEdited].PLS}</td>
+                        <td><button onclick="edit(${students[idEdited].index});">Edit</button></td>`);
+                idEdited=-1;
             }
+            else
+            {
+                myStudent = new student(index, nom, mail, commentaire, date, PLS);
+                students.push(myStudent);
+            $("#studentsTableBody").append
+               (
+               `<tr id="student-${myStudent.index}">
+                    <td>${myStudent.nom}</td>
+                    <td>${myStudent.mail}</td>
+                    <td>${myStudent.commentaire}</td>
+                    <td>${myStudent.date}</td>
+                    <td>${myStudent.PLS}</td>
+                    <td><button onclick="edit(${myStudent.index});">Edit</button></td>
+                </tr>`
+                );
+                nbOfStudents+=1;
+            }
+        }
         </script>
     </body>
 </html>

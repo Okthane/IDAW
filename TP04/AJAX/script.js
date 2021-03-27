@@ -91,14 +91,14 @@ function validate() {
     return isValid;
 }
 
-
+let urlbackend = "http://localhost/IDAW/backend/";
 $("#stolenForm").submit(function(){   
     $.ajax({
-        url : 'addUser.php',
+        url : urlbackend + 'addUser.php',
         type : 'POST',
         data : 'fullName='+ fullName +'email='+email +'comment='+comment + 'dob='+dob + 'choix='+choix,
         
-        dataType : 'html'
+        dataType : 'application/json'
     });
 
 });
