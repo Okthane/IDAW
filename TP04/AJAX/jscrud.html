@@ -28,7 +28,8 @@
             <tbody id="studentsTableBody">
             </tbody>
         </table>
-        <form id="addStudentForm" action="" onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off" >
+        <!--onsubmit="event.preventDefault();onFormSubmit();"-->
+        <form id="addStudentForm" action=""  onsubmit="event.preventDefault();onFormSubmit();"  autocomplete="off" >
             <div class="form-group row">
                 <label for="inputNom" class="col-sm-2 col-form-label">Nom*</label>
                 <div class="col-sm-3">
@@ -36,9 +37,9 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputAdress" class="col-sm-2 col-form-label">Adresse Mail</label>
+                <label for="inputAddress" class="col-sm-2 col-form-label">Adresse Mail</label>
                 <div class="col-sm-3">
-                    <input type="email" class="form-control" id="inputAdress" value="pierre@gmail.com">
+                    <input type="email" class="form-control" id="inputAddress" value="pierre@gmail.com">
                 </div>
             </div>
             <div class="form-group row">
@@ -70,6 +71,7 @@
         let students = [];
         let nbOfStudents = 0;
         let idEdited = -1;
+
         function edit(id){
             idEdited  = id;
         }
@@ -88,12 +90,13 @@
         {
             let index = nbOfStudents;
             let nom = $("#inputNom").val();
-            let mail = $("#inputAdress").val();
+            let mail = $("#inputAddress").val();
             let commentaire = $("#inputCom").val();
             let date = $("#inputDate").val();
             let PLS = $('#inputChoice').prop("checked") ? "oui" : "non";
-            console.log("numberOfStudents = ", nbOfStudents);
-            console.log("idEdited = "+ idEdited);
+
+            //console.log("numberOfStudents = ", nbOfStudents);
+            //console.log("idEdited = "+ idEdited);
            // myStudent = new student(index, nom, mail, commentaire, date, PLS);
             if(idEdited!=-1)
             {
@@ -102,7 +105,7 @@
                 students[idEdited].commentaire = commentaire;
                 students[idEdited].date = date;
                 students[idEdited].PLS = PLS;
-                console.log(students[idEdited].nom);
+                //console.log(students[idEdited].nom);
                 $("#student-"+students[idEdited].index).empty();
                     $("#student-"+students[idEdited].index).append(
                         `<td>${students[idEdited].nom}</td>
@@ -126,11 +129,27 @@
                     <td>${myStudent.date}</td>
                     <td>${myStudent.PLS}</td>
                     <td><button onclick="edit(${myStudent.index});">Edit</button></td>
+                    <td><button onclick="delete(${myStudent.index})">Delete</button></td>
                 </tr>`
                 );
                 nbOfStudents+=1;
+
+                
             }
+
         }
+        let urlbackend = "http://localhost/IDAW/TP04/AJAX/";
+
+        $("#addStudentForm").submit(function(){   
+            $.ajax({
+                url : urlbackend + 'addUser.php',
+                type : 'POST',
+                data : 'inputNom='+ inputNom + '&inputAddress=' + document.getElementById("inputAddress").value + "&inputCom=" + inputCom,
+                
+                dataType : 'application/json'
+            });
+
+        });
         </script>
     </body>
 </html>

@@ -39,7 +39,7 @@
                     {
                         $successfullyLogged=true;
                         $login = $tryLogin;
-                        $password=$tryPwd;
+                        $password = $tryPwd;
                         $_SESSION['login']=$login;
                     }
                     else{
